@@ -1,0 +1,51 @@
+.slider {
+  aspect-ratio: 10/12;
+  min-width: 300px;
+  max-width: 500px;
+  position: relative;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  & img {
+    width: 100%;
+    left: 0;
+    position: sticky;
+    object-fit: contain;
+    position: sticky;
+    border-radius: 0.4rem;
+    scroll-snap-align: center;
+  }
+
+  & img:first-child.img1 {
+    animation: img infinite 3s ease-in-out;
+  }
+
+  &:hover > img {
+    animation: none;
+  }
+
+  & div {
+    position: absolute;
+    z-index: -10;
+    transform: translateY(1.2%);
+    & img {
+      object-fit: contain;
+      animation: none;
+      border-radius: 0.45rem;
+    }
+  }
+}
+
+@keyframes img {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-5%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
